@@ -9,12 +9,12 @@ p {
 /*The ID selector uses the id attribute of an HTML element. Since the id is unique within a webpage,
  it allows the developer to select a specific element for styling. ID selectors are prefixed with a
   # character.*/
-#id{
+#ids{
     color:#e70606;
 }
 
 /*Class Selector*/
-/*Elements can also be selected based on the class attribute applied to them. The CSS rule has been 
+/*Ele  ments can also be selected based on the class attribute applied to them. The CSS rule has been 
 applied to all elements with the specified class name. The class selector is prefixed with a 
 . character*/
 .class{
@@ -22,3 +22,14 @@ applied to all elements with the specified class name. The class selector is pre
 }
 
 /*Element with class selector*/
+/*A more specific method for selecting HTML elements is by first selecting the HTML element, then
+ selecting the CSS class or ID.*/
+p.elemClass{
+    color: rgb(17, 183, 128);
+}
+/*Descendant Selector*/
+/*Descendant selectors are useful if you need to select HTML elements that are contained within 
+another selector.*/
+#blog h1{
+    color: rgb(255, 0, 242);
+}
