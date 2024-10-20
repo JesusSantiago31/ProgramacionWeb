@@ -33,3 +33,10 @@ another selector.*/
 #blog h1{
     color: rgb(255, 0, 242);
 }
+
+/*Child Selectors*/
+/*Child selectors are more specific than descendant selectors. They only select elements that are immediate descendants (children) of a selector (the parent).*/
+#blog > h1 {
+    color: blue;
+  }
+  
