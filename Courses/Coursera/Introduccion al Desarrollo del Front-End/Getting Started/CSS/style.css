@@ -2,6 +2,7 @@
 /*Element Selectors*/
 /*The element selector allows developers to select HTML elements based on their element type.*/
 p {
+    /*HEX Value*/
     color: #065ce7;
 }
 
@@ -10,6 +11,7 @@ p {
  it allows the developer to select a specific element for styling. ID selectors are prefixed with a
   # character.*/
 #ids{
+    /*HEX Value*/
     color:#e70606;
 }
 
@@ -18,6 +20,7 @@ p {
 applied to all elements with the specified class name. The class selector is prefixed with a 
 . character*/
 .class{
+    /*HEX Value*/
     color: #06e706;
 }
 
@@ -25,18 +28,34 @@ applied to all elements with the specified class name. The class selector is pre
 /*A more specific method for selecting HTML elements is by first selecting the HTML element, then
  selecting the CSS class or ID.*/
 p.elemClass{
+    /*RGB Value*/
     color: rgb(17, 183, 128);
 }
 /*Descendant Selector*/
 /*Descendant selectors are useful if you need to select HTML elements that are contained within 
 another selector.*/
 #blog h1{
+    /*RGB Value*/
     color: rgb(255, 0, 242);
 }
 
 /*Child Selectors*/
 /*Child selectors are more specific than descendant selectors. They only select elements that are immediate descendants (children) of a selector (the parent).*/
 #blog > h1 {
+    /*Predefined color name*/
     color: blue;
   }
+
+  /*Manejo de los colores en CSS*/
+  /*From CSS Version 3, there are five main ways to reference a color.
+
+By RGB value,
+
+By RGBA value,
+
+By HSL value,
+
+By hex value and
+
+By predefined color names.*/
   
