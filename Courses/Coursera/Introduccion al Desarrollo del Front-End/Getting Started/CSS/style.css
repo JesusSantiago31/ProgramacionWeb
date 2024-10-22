@@ -1,4 +1,6 @@
-/*Differents types of selectors*/
+/*   SELECTORS  |   TEXT COLOR AND FONTSIZE     |    ALIGNMENT BASICS   */
+
+/*SELECTORS*/
     /*Element Selectors*/
     /*The element selector allows developers to select HTML elements based on their element type.*/
 p {
@@ -46,6 +48,7 @@ p.elemClass{
     color: blue;
   }
 
+  /*COLOR*/
 /*Manejo de los colores en CSS*/
 /*From CSS Version 3, there are five main ways to reference a color.
 
@@ -59,7 +62,7 @@ p.elemClass{
 
 By predefined color names.*/    
   
-/* Text and Font Size*/
+/* TEXT FONTSIZE*/
 
     p { 
         font-family: "Courier New", monospace;
@@ -80,5 +83,33 @@ By predefined color names.*/
         text-decoration-style: solid;
         text-decoration-thickness: 5px;
       }
+
+
+/*BASIC ALIGNMENT*/
+      /*TEXT ALIGNMENT*/
+    /* left, right, center and justify.*/
+
+    p {
+        text-align: center;
+    }
+
+    /*HTMK ELEMENTS ALIGNMENT*/
+    .parent {
+        border: 4px solid red;
+      }
+      .child {
+        width: 50%;
+        padding: 20px;
+        border: 4px solid green;
+        margin: auto /*The browser calculate the margin automatically BASED ON THE SPACE AVAILABLE*/;
+        text-align: center;
+      }
+
+      /*Float Element :  sets an element's position relative to the text content within a parent element.
+       Text will wrap around the element.*/
+       .child2 {
+        float: right;
+      }
+
 
     
