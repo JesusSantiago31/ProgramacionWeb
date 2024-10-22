@@ -1,61 +1,84 @@
 /*Differents types of selectors*/
-/*Element Selectors*/
-/*The element selector allows developers to select HTML elements based on their element type.*/
+    /*Element Selectors*/
+    /*The element selector allows developers to select HTML elements based on their element type.*/
 p {
     /*HEX Value*/
     color: #065ce7;
 }
 
-/*ID Selectors*/
-/*The ID selector uses the id attribute of an HTML element. Since the id is unique within a webpage,
- it allows the developer to select a specific element for styling. ID selectors are prefixed with a
-  # character.*/
+    /*ID Selectors*/
+    /*The ID selector uses the id attribute of an HTML element. Since the id is unique within a webpage,
+    it allows the developer to select a specific element for styling. ID selectors are prefixed with a
+     # character.*/
 #ids{
     /*HEX Value*/
     color:#e70606;
 }
 
-/*Class Selector*/
-/*Ele  ments can also be selected based on the class attribute applied to them. The CSS rule has been 
-applied to all elements with the specified class name. The class selector is prefixed with a 
-. character*/
+    /*Class Selector*/
+    /*Ele ments can also be selected based on the class attribute applied to them. The CSS rule has been 
+    applied to all elements with the specified class name. The class selector is prefixed with a 
+    . character*/
 .class{
     /*HEX Value*/
     color: #06e706;
 }
 
-/*Element with class selector*/
-/*A more specific method for selecting HTML elements is by first selecting the HTML element, then
- selecting the CSS class or ID.*/
+    /*Element with class selector*/
+    /*A more specific method for selecting HTML elements is by first selecting the HTML element, then
+    selecting the CSS class or ID.*/
 p.elemClass{
     /*RGB Value*/
     color: rgb(17, 183, 128);
 }
-/*Descendant Selector*/
-/*Descendant selectors are useful if you need to select HTML elements that are contained within 
-another selector.*/
+    /*Descendant Selector*/
+    /*Descendant selectors are useful if you need to select HTML elements that are contained within 
+    another selector.*/
 #blog h1{
-    /*RGB Value*/
-    color: rgb(255, 0, 242);
+    /*RGBA Value Opacity or transparency*/
+    color: rgba(255, 0, 242, 0.342);
 }
 
-/*Child Selectors*/
-/*Child selectors are more specific than descendant selectors. They only select elements that are immediate descendants (children) of a selector (the parent).*/
+    /*Child Selectors*/
+    /*Child selectors are more specific than descendant selectors. They only select elements that are immediate descendants (children) of a selector (the parent).*/
 #blog > h1 {
     /*Predefined color name*/
     color: blue;
   }
 
-  /*Manejo de los colores en CSS*/
-  /*From CSS Version 3, there are five main ways to reference a color.
+/*Manejo de los colores en CSS*/
+/*From CSS Version 3, there are five main ways to reference a color.
 
-By RGB value,
+    By RGB value,
 
-By RGBA value,
+    By RGBA value,
 
-By HSL value,
+    By HSL value,
 
-By hex value and
+    By hex value and
 
-By predefined color names.*/
+By predefined color names.*/    
   
+/* Text and Font Size*/
+
+    p { 
+        font-family: "Courier New", monospace;
+        font-size: 22px;
+    }
+    /*Text Transfromation*/
+    /* uppercase,  lowercase,  capitalize  and none. */
+    p { 
+        text-transform: lowercase; 
+      }
+
+    /*Text Decoration*/
+    /*underline, overline, line-through and none*/
+    p.elemClass { 
+        text-decoration: overline rgb(13, 165, 71) solid 5px;
+        text-decoration-line: overerline;
+        text-decoration-color: rgb(0, 170, 255);
+        text-decoration-style: solid;
+        text-decoration-thickness: 5px;
+      }
+
+    
