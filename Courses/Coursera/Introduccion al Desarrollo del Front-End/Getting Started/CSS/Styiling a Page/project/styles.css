@@ -13,3 +13,18 @@ h2{
 .center-text{
     text-align: center;
 }
+
+#logo {
+    display: block;
+    margin: auto;
+    
+}
+
+span > h2{
+ color: #FA9F42;
+}
+
+#copyright{
+    padding-top: 12px;
+    font-size: 0.75em;
+}
