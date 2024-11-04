@@ -23,7 +23,7 @@ a
 Multi-line
 comment */
 ```
-### The semi-colon in JS
+## The semi-colon in JS
 In JavaScript, the semi-colon - the ``;`` character -  it is used to clearly delimit parts of the code from some other parts of the code.
 
 **Automatic Semi-Colon Insertion (ASI)**
