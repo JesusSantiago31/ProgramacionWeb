@@ -29,3 +29,11 @@
 
 `!` Return False if the result is True `!(a > 5)`
 
+# Comparison Operators
+
+`>` Greater than
+
+`<` Less than
+
+ `==` Equal
+
