@@ -50,3 +50,6 @@ And now I can console log the values stored in simpleArr:
 ```js 
 console.log(simpleArr); // ['apple','pear','plum']
 ```
+
+# Additional resources:
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
