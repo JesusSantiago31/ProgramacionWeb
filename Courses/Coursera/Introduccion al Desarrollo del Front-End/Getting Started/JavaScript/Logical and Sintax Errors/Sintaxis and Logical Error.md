@@ -1,4 +1,4 @@
-# Logical and Sintaxis Errors in JS
+# Logical and Sintaxis Errors in JS       
 
 Here are some of the common error en JavaScript
 
