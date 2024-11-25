@@ -34,3 +34,4 @@ function styleAndCelebrate(color, background, fontSize, txt, reason) {
 
 // Final invocation with arguments
 styleAndCelebrate('#ef7c8e', '#fae8e0', '30px', 'You made it!', 'champions');
+
