@@ -129,8 +129,8 @@ First, I'll code the base Animal class.
     getColor() {
         console.log(this.color)
     }
-}
-```
+    }
+    ```
 Each animal object, no matter which one it is, will share the properties of color and energy.
 
 Now I can code the Cat and Bird classes:
