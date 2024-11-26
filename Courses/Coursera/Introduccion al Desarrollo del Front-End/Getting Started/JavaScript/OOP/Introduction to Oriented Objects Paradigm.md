@@ -139,3 +139,58 @@ ringTheBell(bicycle); // Ring, ring! Watch out, please!
 ```
 
 However, if I invoke the `ringTheBell()` function and pass it the door object, I'll get the following output: 
+```JS
+ringTheBell(door); // "Ring, ring! Come here, please!"
+```
+
+You've now seen an example of the exact same function producing different results, based on the context in which it is used.
+
+Here's another example,the concatenation operator, used by calling the built-in concat() method.
+
+If I use the concat() method on two strings, it behaves exactly the same as if I used the + operator. 
+
+```JS
+"abc".concat("def"); // 'abcdef'
+```
+I can also use the concat() method on two arrays. Here's the result: 
+```JS
+["abc"].concat(["def"]); // ['abc', 'def']
+```
+Consider using the + operator on two arrays with one member each:  
+```JS
+["abc"] + ["def"]; // ["abcdef"]
+```
+
+This means that the concat() method is exhibiting polymorphic behavior since it behaves differently based on the context - in this case, based on what data types I give it.
+
+To reiterate, polymorphism is useful because it allows developers to build objects that can have the exact same functionality, namely, functions with the exact same name, which behave exactly the same. However, at the same time, you can override some parts of the shared functionality or even the complete functionality, in some other parts of the OOP structure.
+
+Here's an example of polymorphism using classes in JavaScript:
+```JS
+class Bird {
+    useWings() {
+        console.log("Flying!")
+    }
+}
+class Eagle extends Bird {
+    useWings() {
+        super.useWings()
+        console.log("Barely flapping!")
+    }
+}
+class Penguin extends Bird {
+    useWings() {
+        console.log("Diving!")
+    }
+}
+var baldEagle = new Eagle();
+var kingPenguin = new Penguin();
+baldEagle.useWings(); // "Flying! Barely flapping!"
+kingPenguin.useWings(); // "Diving!"
+
+```
+
+
+The Penguin and Eagle sub-classes both inherit from the Bird super-class. The Eagle sub-class inherits the useWings() method from the Bird class, but extends it with an additional console log. The Penguin sub-class doesn't inherit the useWings() class - instead, it has its own implementation, although the Penguin class itself does extend the Bird class.  
+
+
