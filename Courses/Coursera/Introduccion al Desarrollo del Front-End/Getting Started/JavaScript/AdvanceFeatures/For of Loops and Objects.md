@@ -48,3 +48,13 @@ const car2 = {
 console.log(Object.keys(car2)); // ['speed','color']
 ```
 So, when I run `Object.keys()` and pass it my car2 object, the returned value is an array of strings, where each string is a property key of the properties contained in my car2 object
+
+### The` Object.values()` method
+Another useful method is `Object.values()`:
+```js
+const car3 = {
+    speed: 300,
+    color: "yellow"
+}
+console.log(Object.values(car3)); // [300, 'yellow']
+```
