@@ -92,7 +92,7 @@ for( const key of Object.keys(clothingItem) ) {
     console.log(key, ":", clothingItem[key])
 }
 ```
-The trickiest part to understand in this syntax is probably the clothingItem[key].
+The trickiest part to understand in this syntax is probably the *clothingItem[key]*.
 
 Luckily, this is not too hard to comprehend, especially since you've already covered the concept previously when you were learning how to access an object's member using the brackets notation. 
 
@@ -124,7 +124,7 @@ testBracketsDynamicAccess();
 
 This example might feel a bit convoluted, but its purpose is to demo the fact that you're getting either one or the other value from an object's key, based on the string that got assigned to the dynamicKey variable, and accessed without issues, using the brackets notation.
 
-Feel free to run the testBracketsDynamicAccess() function a few times, and you'll notice that sometimes the value that gets output is 15, and sometimes it's orange, although I'm always accessing the drone[dynamicKey] key. Since the value of the dynamicKey is populated on the Math.random() invocation, sometimes that expression evaluates to drone["speed"], and other times that expression evaluates to drone["color"].
+Feel free to run the` testBracketsDynamicAccess()` function a few times, and you'll notice that sometimes the value that gets output is 15, and sometimes it's orange, although I'm always accessing the *drone[dynamicKey]* key. Since the value of the dynamicKey is populated on the `Math.random()` invocation, sometimes that expression evaluates to *drone["speed"]*, and other times that expression evaluates to *drone["color"]*.
 
 
 You have now learned about the building blocks that make the for of loop useful to iterate over objects - although objects are not iterables. 
