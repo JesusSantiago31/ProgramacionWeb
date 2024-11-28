@@ -6,21 +6,22 @@ class Person{
         this.energy = energy;
     }
 
-    sleep(energy){
-        energy += 10;
+    sleep(){    
+        this.energy += 10;
         }
-    doSomethingFun(energy){
-        energy -= 10;
+    doSomethingFun(){
+        this.energy -= 10;
     }
 }
 // Task 2: Code a Worker class
 class Worker extends Person{
-    constructor(xp = 0, hourlyWage = 10, name, age, anaergy){
+    constructor( name, age, energy, xp = 0, hourlyWage = 10){
+        super(name,age,this.energy)
         this.xp = xp;
         this.hourlyWage = 10;
     }
-    goToWork(xp){
-        xp += 10;
+    goToWork(){
+        this.xp += 10;
     }
 }
 
