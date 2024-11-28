@@ -58,3 +58,77 @@ const car3 = {
 }
 console.log(Object.values(car3)); // [300, 'yellow']
 ```
+
+### The `Object.entries()` method
+Finally, there's another useful method, `Object.entries()`, which returns an array listing both the keys and the values.  
+
+```js
+const car4 = {
+    speed: 400,
+    color: 'magenta'
+}
+console.log(Object.entries(car4));
+```
+What gets returned from the invocation of the `Object.entries()` method is the following:  
+```js
+[ ['speed', 400], ['color', 'magenta'] ]
+```
+To summarise, you learned that you can loop over arrays using the for of loop.  You also learned that you can extract object's keys, values, or both, using the `Object.keys()`, `Object.values()` and `Object.entries()` syntax.
+
+### Examples
+You now have all the ingredients that you need to loop over any object's own property keys and values.
+
+Here's a very simple example of doing just that:
+
+```js
+var clothingItem = {
+    price: 50,
+    color: 'beige',
+    material: 'cotton',
+    season: 'autumn'
+}
+
+for( const key of Object.keys(clothingItem) ) {
+    console.log(key, ":", clothingItem[key])
+}
+```
+The trickiest part to understand in this syntax is probably the clothingItem[key].
+
+Luckily, this is not too hard to comprehend, especially since you've already covered the concept previously when you were learning how to access an object's member using the brackets notation. 
+
+Recall that you also learned how you can dynamically access a property name.
+
+To revisit this concept and show a practical demo of how that works, let's code a function declaration that randomly assigns either the string speed or the string color to a variable name, and then build an object that has only two keys: a speed key and a color key.
+
+After this setup, you will be able to dynamically access either one of those properties on a brand new drone object, using the brackets notation.
+
+Here's the example's code:
+```js
+function testBracketsDynamicAccess() {
+  var dynamicKey;
+  if(Math.random() > 0.5) {
+    dynamicKey = "speed";
+   }else{
+     dynamicKey = "color";
+   }
+
+    var drone = {
+      speed: 15,
+      color: "orange"
+    }
+
+    console.log(drone[dynamicKey]);
+}
+testBracketsDynamicAccess();
+```
+
+This example might feel a bit convoluted, but its purpose is to demo the fact that you're getting either one or the other value from an object's key, based on the string that got assigned to the dynamicKey variable, and accessed without issues, using the brackets notation.
+
+Feel free to run the testBracketsDynamicAccess() function a few times, and you'll notice that sometimes the value that gets output is 15, and sometimes it's orange, although I'm always accessing the drone[dynamicKey] key. Since the value of the dynamicKey is populated on the Math.random() invocation, sometimes that expression evaluates to drone["speed"], and other times that expression evaluates to drone["color"].
+
+
+You have now learned about the building blocks that make the for of loop useful to iterate over objects - although objects are not iterables. 
+
+Next, you'll have a go at a practical example of working with both the for of and the for in loop. Each loops have their place and can be considered useful in different situations.
+
+  
