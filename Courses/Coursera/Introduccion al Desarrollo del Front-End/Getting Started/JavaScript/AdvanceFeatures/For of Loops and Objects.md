@@ -126,9 +126,3 @@ This example might feel a bit convoluted, but its purpose is to demo the fact th
 
 Feel free to run the` testBracketsDynamicAccess()` function a few times, and you'll notice that sometimes the value that gets output is 15, and sometimes it's orange, although I'm always accessing the *drone[dynamicKey]* key. Since the value of the dynamicKey is populated on the `Math.random()` invocation, sometimes that expression evaluates to *drone["speed"]*, and other times that expression evaluates to *drone["color"]*.
 
-
-You have now learned about the building blocks that make the for of loop useful to iterate over objects - although objects are not iterables. 
-
-Next, you'll have a go at a practical example of working with both the for of and the for in loop. Each loops have their place and can be considered useful in different situations.
-
-  
