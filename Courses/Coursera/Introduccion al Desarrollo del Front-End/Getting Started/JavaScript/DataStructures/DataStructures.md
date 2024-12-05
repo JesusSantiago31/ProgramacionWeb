@@ -60,3 +60,25 @@ Here's the returned array value:
 [30,40,50]
 ```
 Similar to the forEach() method, the filter() method also accepts a function and that function performs some work on each of the items in the array.
+
+### The map method
+
+Finally, there's a very useful map method. 
+
+This method is used to map each array item over to another array's item, based on whatever work is performed inside the function that is passed-in to the map as a parameter. 
+
+For example:
+```js
+[0,10,20,30,40,50].map( function(num) {
+    return num / 10
+})
+```
+The return value from the above code is:  
+```js
+[0,1,2,3,4,5]
+```
+1
+[0,1,2,3,4,5]
+As already discussed, choosing a proper data structure affects the very code that you can write. This is because the data structure itself comes with some built-in functionality that makes it easier to perform certain tasks or makes it harder or even impossible without converting your code to a proper data structure.
+
+Now that you've covered the methods, let's explore how to work with different built-in data structures in JavaScript.
