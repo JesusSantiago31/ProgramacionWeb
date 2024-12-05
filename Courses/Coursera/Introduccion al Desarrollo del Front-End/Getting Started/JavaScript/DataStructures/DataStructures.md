@@ -45,3 +45,18 @@ Very often, the function that the forEach() method needs to use is passed in dir
 
 This makes for more compact code, but perhaps somewhat harder to read. To increase readability, sometimes arrow functions are used. You can find out more about arrow functions in the additional reading.
 
+### The filter() method
+Another very useful method on the array is the filter() method. It filters your arrays based on a specific test. Those array items that pass the test are returned.
+
+Here's an example:
+```js
+const nums = [0,10,20,30,40,50];
+nums.filter( function(num) {
+    return num > 20;
+})
+```
+Here's the returned array value:  
+```js
+[30,40,50]
+```
+Similar to the forEach() method, the filter() method also accepts a function and that function performs some work on each of the items in the array.
