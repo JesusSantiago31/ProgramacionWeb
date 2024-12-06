@@ -82,3 +82,28 @@ The return value from the above code is:
 As already discussed, choosing a proper data structure affects the very code that you can write. This is because the data structure itself comes with some built-in functionality that makes it easier to perform certain tasks or makes it harder or even impossible without converting your code to a proper data structure.
 
 Now that you've covered the methods, let's explore how to work with different built-in data structures in JavaScript.
+
+## Working with Objects in JavaScript
+A lot of the information on how to work with objects in JavaScript has already been covered in this course.
+
+The example below demonstrates how to use the object data structure to complete a specific task. This task is to convert an object to an array:
+```js
+const result = [];
+const drone = {
+    speed: 100,
+    color: 'yellow'
+}
+const droneKeys = Object.keys(drone);
+droneKeys.forEach( function(key) {
+    result.push(key, drone[key])
+})
+console.log(result)
+```
+This is the result of executing the above code:  
+```js
+['speed',100,'color','yellow']
+```
+Although this is possible and works, having to do something like this might mean that you haven't chosen the correct data structure to work with in your code.
+
+On the flip side, sometimes you don't get to pick the data structure you're working with. Perhaps that data comes in from a third-party data provider and all you can do is code your program so that it consumes it. You'll learn more about the interchange of data on the web when you learn about JSON (JavaScript Object Notation).
+
