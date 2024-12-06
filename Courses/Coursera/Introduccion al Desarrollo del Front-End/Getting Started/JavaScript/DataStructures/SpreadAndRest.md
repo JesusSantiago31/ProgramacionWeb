@@ -28,3 +28,15 @@ const car = { wheels: 4 }
 const flyingCar = {...flying, ...car}
 console.log(flyingCar) // {wings: 2, wheels: 4}
 ```
+## Add new members to arrays without using the push() method
+Here's how to use the spread operator to easily add one or more members to an existing array:
+```js
+let veggies = ['onion', 'parsley'];
+veggies = [...veggies, 'carrot', 'beetroot'];
+console.log(veggies);
+```
+Here's the output:
+```js
+['onion', 'parsley', 'carrot', 'beetroot']
+```
+
