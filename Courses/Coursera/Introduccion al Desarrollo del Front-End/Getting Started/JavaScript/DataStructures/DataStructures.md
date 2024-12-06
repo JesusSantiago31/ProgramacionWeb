@@ -107,3 +107,31 @@ Although this is possible and works, having to do something like this might mean
 
 On the flip side, sometimes you don't get to pick the data structure you're working with. Perhaps that data comes in from a third-party data provider and all you can do is code your program so that it consumes it. You'll learn more about the interchange of data on the web when you learn about JSON (JavaScript Object Notation).
 
+## Working with Maps in JavaScript
+
+To make a new Map, you can use the Map constructor:
+
+```js
+new Map();
+```
+A map can feel very similar to an object in JS.
+
+However, it doesn't have inheritance. No prototypes! This makes it useful as a data storage.
+
+For example:
+```js
+let bestBoxers = new Map();
+bestBoxers.set(1, "The Champion");
+bestBoxers.set(2, "The Runner-up");
+bestBoxers.set(3, "The third place");
+
+console.log(bestBoxers);
+```
+Here's the console output:  
+```js
+Map(3) {1 => 'The Champion', 2 => 'The Runner-up', 3 => 'The third place'}
+```
+To get a specific value, you need to use the get() method. For example:  
+```js
+bestBoxers.get(1); // 'The Champion'
+```
