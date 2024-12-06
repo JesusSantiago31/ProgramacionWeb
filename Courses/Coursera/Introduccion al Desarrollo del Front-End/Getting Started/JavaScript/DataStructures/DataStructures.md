@@ -135,3 +135,22 @@ To get a specific value, you need to use the get() method. For example:
 ```js
 bestBoxers.get(1); // 'The Champion'
 ```
+## Working with Sets in JavaScript
+A set is a collection of unique values.
+
+To build a new set, you can use the Set constructor:
+```JS
+new Set();
+```
+The Set constructor can, for example, accept an array.
+
+This means that we can use it to quickly filter an array for unique members.
+```js
+const repetitiveFruits = ['apple','pear','apple','pear','plum', 'apple'];
+const uniqueFruits = new Set(repetitiveFruits);
+console.log(uniqueFruits);
+```
+The above code outputs the following in the console:  
+```js
+{'apple', 'pear', 'plum'}
+```
