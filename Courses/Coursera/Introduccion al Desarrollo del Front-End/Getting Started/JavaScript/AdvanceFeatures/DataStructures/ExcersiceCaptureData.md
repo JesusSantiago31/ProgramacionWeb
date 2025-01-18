@@ -49,7 +49,28 @@ The third case should start with case arr[2]:. It should set the h1.innerText to
 
 The default case should set the value of the h1.innerText property to arr[0].
 
-``js
-
+```js
+function handleClicks() {
+    switch(h1.innerText) {
+        case arr[0]:
+            h1.innerText = arr[1]
+            break
+        case arr[1]:
+            h1.innerText = arr[2]
+            break
+        case arr[2]:
+            h1.innerText = arr[3]
+            break
+        default:
+            h1.innerText = arr[0]
+    }
+}
  ```
 
+
+## Task 5: Add an event listener
+You've created an h1 variable in Task 2. Now, use that variable to run the addEventListener() method on it. Pass two arguments to the addEventListener() method: 'click' and handleClicks.
+
+```js
+h1.addEventListener('click', handleClicks);
+```
