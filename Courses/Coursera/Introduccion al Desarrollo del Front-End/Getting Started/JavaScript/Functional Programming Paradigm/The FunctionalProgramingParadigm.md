@@ -14,7 +14,7 @@ var num2 = 3;
 var total = getTotal(num1, num2);
 ```
 
-When writing FP code, we keep data and functionality separate and pass data into functions only when we want something computed.
+When writing FP code, **we keep data and functionality separate** and pass data into functions only when we want something computed.
 
 ```js
 function getDistance(mph, h) {
@@ -39,7 +39,7 @@ console.log(distance); // <====== THIS HERE!
 ```
 # OOP
 
-Another style is object-oriented programming (OOP). In this style, we group data and functionality as properties and methods inside objects.
+Another style is object-oriented programming (OOP). In this style, **we group data and functionality as *properties and methods* inside objects.**
 
 For example, if I have a virtualPet object, I can give it a sleepy property and a nap() method:
 
