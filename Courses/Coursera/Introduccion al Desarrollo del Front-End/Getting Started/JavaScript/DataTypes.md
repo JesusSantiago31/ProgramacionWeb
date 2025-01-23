@@ -33,6 +33,7 @@ Undefined
 ```
 
 6.- _*Bigint*_      Integers with arbitrary magnitude
+
 7.- Symbol      Unique and immutable primitive value and may be used as the key of an Object propert
 ```JS
 Bigint
