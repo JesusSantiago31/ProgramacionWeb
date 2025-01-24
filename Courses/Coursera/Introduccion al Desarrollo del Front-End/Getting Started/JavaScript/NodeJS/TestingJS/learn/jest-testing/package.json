@@ -1,16 +1,14 @@
 {
-  "name": "nodejs",
+  "name": "jest-testing",
   "version": "1.0.0",
-  "main": "addFive.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "flag": "^5.0.1",
     "jest": "^29.7.0"
   }
 }
