@@ -6,7 +6,7 @@ const gameOverSign = document.getElementById('gameOver')
 
 //Game Settings
 const boardSize = 10;
-const gameSpeed = 100;
+const gameSpeed = 150;
 const squareTypes={
     emptySquare: 0,
     snakeSquare: 1,
@@ -38,6 +38,7 @@ const drawSquare =(square, type) =>{
     const [row, column] = square.split('');
     boardSquares[row][column] = squareTypes[type];
     const squareElement = document.getElementById(square);
+    squareElement.setAttribute('class', `square ${type}`);
 
     if (type === 'emptySquare'){
         emptySquares.push(square);
@@ -51,30 +52,33 @@ const drawSquare =(square, type) =>{
 // MOvimiento de la serpiente
 const moveSnake = () => {
     const newSquare = String( // Compuesta por el ultimo lugar del snake y sumar el valor que le corresponde a la direccion
-        Number(snake [snake.length - 1]) + directions[direction]).padStart(2, '0');
-        const [row, column] = newSquare.split(''); // Poder seleccionar en el board square lo que se necesite
-        // * Averiguar si el juego se ha terminado si: La serpiente choca con alguna de las paredes o cuando choca con si misma
-        if (newSquare < 0 || newSquare > boardSize * boardSize // ! 0 = Chocoó contra la pared , chocó para abajo
-            || (direction === 'ArrowRight' && column == 0) || // ! salio del tablero
-            (direction === 'ArrowLeft' && column == 9) ||
-            boardSquares[row,column] === squareTypes.snakeSquare ){ // ! chocó contra si misma  
-            gameOver();
+        Number(snake [snake.length - 1]) + directions[direction])
+        .padStart(2, '0');
+    const [row, column] = newSquare.split(''); // Poder seleccionar en el board square lo que se necesite
+
+    // * Averiguar si el juego se ha terminado si: La serpiente choca con alguna de las paredes o cuando choca con si misma
+    if (newSquare < 0 || 
+        newSquare > boardSize * boardSize // ! 0 = Chocoó contra la pared , chocó para abajo
+        || (direction === 'ArrowRight' && column == 0) || // ! salio del tablero
+        (direction === 'ArrowLeft' && column == 9 ||
+        boardSquares[row][column] === squareTypes.snakeSquare) ){ // ! chocó contra si misma  
+        gameOver();
+    }else{
+        snake.push(newSquare);
+        if(boardSquares[row][column] === squareTypes.foodSquare){
+            addFood();
         }else{
-            snake.push(newSquare);
-            if(boardSquares[row,column] === squareTypes.foodSquare){
-                addFood();
-            }else{
-                const emptySquare = snake.shift();
-                drawSquare(emptySquare, 'emptySquare');
-            }
-            drawSnake();
+            const emptySquare = snake.shift();
+            drawSquare(emptySquare, 'emptySquare');
         }
+        drawSnake();
+    }
 }
 
 const addFood = () => {
     score++;
     updateScore();
-    createBoard();
+    createRandomFood();
 }
 
 const gameOver = () => {
@@ -84,11 +88,11 @@ const gameOver = () => {
 
 }
 // Direccionar la serpiente
-const setDirection = () => {
+const setDirection = newDirection => {
     direction = newDirection; // Redeclara la direccion que por defecto esta a la derecha
 }
 
-const directionEvent = () => {
+const directionEvent = key => {
     switch(key.code){
         case 'ArrowUp':
             direction != 'ArrowDown' && setDirection(key.code);
@@ -138,7 +142,7 @@ const setGame= () =>{
     snake = ['00', '01', '02', '03']; // Paint the snake
     score = snake.length;
     direction = 'ArrowRight'; // Starting to right
-    boardSquares = Array.from(Array(boardSize), () => new Array (boardSize).fill(squareTypes.emptySquare)); // Creating the board 10 x 10 with emptySquares or with 0 like a value
+    boardSquares = Array.from(Array(boardSize), () => new Array(boardSize).fill(squareTypes.emptySquare)); // Creating the board 10 x 10 with emptySquares or with 0 like a value
     console.log(boardSquares);
     board.innerHTML='';
     emptySquares=[]; 
