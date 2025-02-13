@@ -27,12 +27,50 @@ let boardSquares;
 let emptySquares; // To have a space available to insert the snake's food
 let moveInterval; 
 
+drawSnake = () =>{
+    snake.forEach(square => drawSquare(square, 'snakeSquare'));
+}
+//Rellena cada cuadrado del tablero
+// @params
+// square: posición del cuadrado
+// type: tipo de cuadrad0 (emptySquare. snakeSquare, foodSquare)
+const drawSquare =(square, type) =>{
+    const [row, column] = square.split('');
+    boardSquares[row][column] = squareTypes[type];
+    const squareElement = document.getElementById(square);
+
+    if (type === 'emptySquare'){
+        emptySquares.push(square);
+    }else{
+        if(emptySquares.indexOf(square) !== -1){
+            emptySquares.splice(emptySquares.indexOf(square),1);
+        }
+    }
+}
+
+// * Crear funcion para crear comida a lo largo y ancho del tablero
+const createRandomFood = () => {
+    const randomEmptySquare = emptySquares[Math.floor(Math.random() * emptySquares.length)]; //Elegir una casilla vacía
+    drawSquare(randomEmptySquare, 'foodSquare');
+}
+
+// * Actualizar puntaje
+const updateScore =() => {
+    scoreBoard.innerText = score;
+}
+
 //Create Board
 const createBoard= () =>{
     boardSquares.forEach((row, rowIndex) => {
         row.forEach((column, columndex) => {
-            const squareValue = `${rowIndex}${columndex}`;
+            const squareValue = `${rowIndex}${columndex}`; //Identificar el valor del cuadrado en el que se encuentra
             const squareElement = document.createElement('div');
+            squareElement.setAttribute('class','square emptySquare');
+            squareElement.setAttribute('id', squareValue);
+
+            //Tomar el board y agregar el elemento
+            board.appendChild(squareElement);
+            emptySquares.push(squareValue); 
         });
     });
 }
@@ -52,6 +90,11 @@ const setGame= () =>{
 // Function
 const startGame = () =>{
     setGame();
+    gameOverSign.style.display = 'none'; //Desaparecer el marcador de GameOver
+    startButton.disabled = true; //Desabilitar el boton de Start mientras se juega
+    drawSnake();
+    updateScore();
+    createRandomFood();
 }
 
 startButton.addEventListener('click', startGame);
