@@ -59,9 +59,30 @@ const moveSnake = () => {
             (direction === 'ArrowLeft' && column == 9) ||
             boardSquares[row,column] === squareTypes.snakeSquare ){ // ! chocó contra si misma  
             gameOver();
+        }else{
+            snake.push(newSquare);
+            if(boardSquares[row,column] === squareTypes.foodSquare){
+                addFood();
+            }else{
+                const emptySquare = snake.shift();
+                drawSquare(emptySquare, 'emptySquare');
+            }
+            drawSnake();
         }
 }
 
+const addFood = () => {
+    score++;
+    updateScore();
+    createBoard();
+}
+
+const gameOver = () => {
+    gameOverSign.style.display = 'block';
+    clearInterval(moveInterval) // Para que la serpiente se deje de mover 
+    startButton.disabled = false;
+
+}
 // Direccionar la serpiente
 const setDirection = () => {
     direction = newDirection; // Redeclara la direccion que por defecto esta a la derecha
