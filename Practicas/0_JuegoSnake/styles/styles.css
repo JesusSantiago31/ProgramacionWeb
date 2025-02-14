@@ -1,7 +1,20 @@
 * {
     font-family: 'Share Tech Mono', monospace;
+    background-color:#5b96d5 ;
+    
 }
 
+h2{
+    font-size: 2rem;
+    padding-left: 40%;
+}
+h6{
+    padding-left: 30%;
+}
+.content{
+    
+    padding-inline-start: 30%;
+}
 #board, .boardInfo{
     max-width: 500px;
 }
@@ -26,7 +39,7 @@
 }
 
 #start{
-    background-color: #f35a69;
+    background-color: #5a5ff3;
     border: none;
     color: white;
 }
@@ -40,13 +53,13 @@
 }
 
 .emptySquare{
-    background-color: #456990;
+    background-color: #095bb3;
 }
 
 .snakeSquare{
-    background-color: #ccf47f;
+    background-color: #000000;
 }
 
 .foodSquare{
-    background-color: #f35a69;
+    background-color: #ffffff;
 }
