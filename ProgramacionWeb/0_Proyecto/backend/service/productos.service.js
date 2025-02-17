@@ -21,23 +21,27 @@ class ProductosService{ // SOLID exige trabajar con nomenclatura de clases, insp
         return nuevoProducto;
     }
 
-    update (id, objeto){
-        // TODO: usar el id para ubicar el producto a cambiar
-        // objeto -> para obtener los datos a cambiar {stock:99}
-        const productoActualizado = {};
+    // TODO todo: colocar el controller de update y de delete 
 
-
-        return productoActualizado
+    static update(req, res) {
+        const { id } = req.params;
+        const updatedProducto = ProductosService.update(id, req.body);
+        if (!updatedProducto) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+        return res.json(updatedProducto);
     }
 
-    delete (id, objeto){
-        //TODO: usar el id para ubicar el producto a eliminar
-
-        const productoEliminado={};
-
-
-        return productoEliminado;
+    static delete(req, res) {
+        const { id } = req.params;
+        const deletedProducto = ProductosService.delete(id);
+        if (!deletedProducto) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+        return res.json(deletedProducto);
     }
 }
+
+
 
 module.exports= {ProductosService:new ProductosService()} //Exportando la clase como ProductosService
