@@ -1,0 +1,64 @@
+main {
+    font-family: 'Roboto Mono', monospace;
+    position: relative;
+}
+
+.circle{
+    border-radius:  50%; /*Para que sea redondo */
+    width: 120px;
+    height: 120px;
+    border: 1px solid #fff;
+    color: #fff;
+    margin: 50px auto; /*Para centrar elementos*/
+    display: flex; /* para centrar contenido*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Fondo negro*/
+.circle::before{ /*pseudoelemento before*/
+    content: ''; /*Para que el before se vea*/
+    border-radius: 50%;
+    z-index: -1; /*Para la posicion del circulo, capa baja*/
+    position: absolute; /*Ponerlo en el mismo lugar queel cronometor*/
+    width: 160px;
+    height: 160px;
+    left: calc(50% -80px); /*Para centarlo y restarle su ancho*/
+    top: calc(50% -80px);
+    background-color: #1d1d1d;
+}
+.seconds-sphere {
+    width: 20px;
+    height: 20px;
+    border-radius:50%;
+    background-color: #fff;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    animation: rotacion 60s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotacion {/*Crear el moviniento de translacion visualmente*/
+    from {transform: rotate(-90deg) translateX(60px);}
+    to { transform:  rotate(270deg) translateX(60px);}
+}
+
+.buttons {
+    margin-top: 10px;
+    display:  inline-flex;
+}
+
+.paused {
+    height: 10px;
+    border-width: 5px 0 5px 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 15px;
+    border-color: transparent transparent transparent #fff;
+    transition: 100ms all ease;
+    will-change: border-width;
+    border-style: solid;
+
+}
