@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrador Cesar</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="./script/script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Cifrador Cesar</h1>
+        <form id="cifrador" autocompleto="off">
+            <input id="input" spellcheck="false" placeholder="Ingrese el texto" type="text" name="text">
+        </form>
+        <div id="resultado"></div>
+        <div class="rango">
+            <input type="range" id="rango" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <output>10</output>
+        </div>
+    </main>
+</body>
+</html>
