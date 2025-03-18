@@ -18,3 +18,18 @@
 ```shell
 docker pull mongo:latest
 ```
+
+# 1.-  Ejecutar el contenedor de docker en el archivo "docker-compose.yaml" en la carpeta backend
+```shell
+docker compose up -d
+```
+
+# Ejecutar en la carpeta de back-end 
+```shell
+npm i 
+```
+
+# Ejecutar el proyecto de back-end
+```shell
+npm run dev
+```
