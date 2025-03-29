@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/agregar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="./script/agregar.js" type="text/javascript" defer></script>
     <title>Productos</title>
 </head>
 
@@ -18,9 +19,9 @@
         </div>
         <nav class="navigator-menu">
             <ul class="navigator-menu-list">
-                <li class="navigator-menu-item"><a href="/index.html">Listar</a></li>
+                <li class="navigator-menu-item"><a href="./index.html">Listar</a></li>
                 <li class="navigator-menu-item navigator-menu-item_active"><a href="#">Agregar</a></li>
-                <li class="navigator-menu-item"><a href="/editar.html">Editar</a></li>
+                <li class="navigator-menu-item"><a href="./editar.html">Editar</a></li>
             </ul>
         </nav>
     </header>
@@ -35,17 +36,17 @@
             <label for="nombre" class="formulario__label">
                 Nombre del producto
             </label>
-            <input id="nombre" type="text" class="formulario__input" required>
+            <input id="nombre" type="text" class="formulario__input" required >
         
             <label for="precio" class="formulario__label">
                 Precio
             </label>
-            <input id="precio" type="number" class="formulario__input" required>
+            <input id="precio" type="number" class="formulario__input" required min="1">
         
             <label for="stock" class="formulario__label">
                 Stock
             </label>
-            <input id="stock" type="number" class="formulario__input" required>
+            <input id="stock" type="number" class="formulario__input" required min="1">
         
             <div class="formulario__acciones">
                 <button type="reset" class="formulario__boton formulario__boton--reset">
