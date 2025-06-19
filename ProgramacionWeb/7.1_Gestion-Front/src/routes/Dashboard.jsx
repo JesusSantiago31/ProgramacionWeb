@@ -1,26 +1,64 @@
-import React from 'react'
-import {CircleArrowUp} from "lucide-react"
-import {CircleArrowDown} from "lucide-react"
-import Card from '../components/Card'
+import React, { useEffect, useState } from "react";
+import Card from "../components/Card";
+import { fetchUltimosMovimientos } from "../js/dashboard";
 
 const Dashboard = () => {
+  const token = localStorage.getItem("token");
+  const [movimientos, setMovimientos] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!token) return;
+
+    const cargarMovimientos = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const data = await fetchUltimosMovimientos(token);
+        setMovimientos(data);
+      } catch (err) {
+        setError(err.message);
+      }
+      setLoading(false);
+    };
+
+    cargarMovimientos();
+  }, [token]);
+
+  if (!token)
     return (
-        <>
-        <h1 className='text-sky-800 text-3xl mt-3 font-bold'>Ultmimos 6 movimientos</h1>
-        
-        <ul className=' flex flex-col w-full h-full p-5 items-center gap-2'>
-            <Card type="Ingreso" color="sky"/>
-            <Card type="Egreso" color="rose"/>
-            <Card type="Ingreso" color="sky"/>
-            <Card type="Egreso" color="rose"/>
-            <Card type="Ingreso" color="sky"/>
-            <Card type="Egreso" color="rose"/>
-           
-        </ul>
-        <p className='text-sky-600 text-rose-400 text-rose-600 text-sky-400 border-rose-400'></p>
-        </>
+      <p className="text-red-600">
+        Debe iniciar sesión para ver el dashboard.
+      </p>
+    );
 
-    )
-}
+  return (
+    <>
+      <h1 className="text-sky-800 text-3xl mt-3 font-bold">
+        Últimos 6 movimientos
+      </h1>
 
-export default Dashboard
+      {loading && <p className="text-center text-sky-600">Cargando...</p>}
+      {error && <p className="text-center text-red-600">Error: {error}</p>}
+
+      <ul className="flex flex-col w-full h-full p-5 items-center gap-2">
+        {movimientos.length === 0 && !loading && (
+          <p className="text-gray-600">No hay movimientos recientes.</p>
+        )}
+        {movimientos.map((mov) => (
+          <Card
+            key={mov._id}
+            type={mov.type}
+            color={mov.type.toLowerCase() === "ingreso" ? "sky" : "rose"}
+            description={mov.description}
+            amount={mov.amount}
+            date={new Date(mov.date).toLocaleDateString()}
+          />
+        ))}
+      </ul>
+    </>
+  );
+};
+
+export default Dashboard;
