@@ -28,3 +28,19 @@ git init
 # Clonar un repositorio existente
 git clone <url_del_repositorio>
 ```
+
+# Estado y Seguimiento de Archivos
+```bash
+# Ver el estado de los archivos (modificados, nuevos, eliminados)
+git status
+
+# Agregar archivos al área de preparación (staging)
+git add <archivo>      # Agrega un archivo específico
+git add .              # Agrega todos los archivos modificados
+
+# Confirmar cambios (commit)
+git commit -m "Mensaje descriptivo de los cambios"
+
+# Confirmar cambios saltando el área de preparación
+git commit -am "Mensaje de commit"
+```
