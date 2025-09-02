@@ -15,3 +15,16 @@ git config --global user.email "tuemail@example.com"
 
 # Ver configuración actual
 git config --list
+
+
+```
+
+# Creación y Clonación de Repositorios
+```bash
+
+# Crear un nuevo repositorio
+git init
+
+# Clonar un repositorio existente
+git clone <url_del_repositorio>
+```
