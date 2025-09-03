@@ -44,3 +44,21 @@ git commit -m "Mensaje descriptivo de los cambios"
 # Confirmar cambios saltando el área de preparación
 git commit -am "Mensaje de commit"
 ```
+
+# Ramas (Branches)
+```bash
+# Crear una nueva rama
+git branch <nombre_rama>
+
+# Listar todas las ramas
+git branch
+
+# Cambiar de rama
+git checkout <nombre_rama>
+
+# Crear y cambiar a la rama en un solo paso
+git checkout -b <nombre_rama>
+
+# Eliminar una rama local
+git branch -d <nombre_rama>
+```
