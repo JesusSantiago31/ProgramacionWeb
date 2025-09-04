@@ -62,3 +62,9 @@ git checkout -b <nombre_rama>
 # Eliminar una rama local
 git branch -d <nombre_rama>
 ```
+
+# Fusión de Ramas (Merging)
+```bash
+# Combinar cambios de otra rama a la rama actual
+git merge <nombre_rama>
+```
