@@ -98,3 +98,14 @@ git diff
 # Ver diferencias de un commit específico
 git diff <commit_id>
 ```
+# Revertir Cambios
+```bash
+# Descartar cambios en un archivo modificado
+git checkout -- <archivo>
+
+# Deshacer un commit pero conservar cambios en staging
+git reset --soft <commit_id>
+
+# Deshacer un commit y eliminar cambios
+git reset --hard <commit_id>
+```
