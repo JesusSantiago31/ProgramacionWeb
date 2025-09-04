@@ -83,3 +83,18 @@ git push origin <nombre_rama>
 # Descargar cambios desde el repositorio remoto
 git pull origin <nombre_rama>
 ```
+
+# Historial y Revisión de Cambios
+```bash
+# Ver historial de commits
+git log
+
+# Ver historial resumido
+git log --oneline
+
+# Ver diferencias entre archivos modificados
+git diff
+
+# Ver diferencias de un commit específico
+git diff <commit_id>
+```
