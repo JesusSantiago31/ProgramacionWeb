@@ -68,3 +68,18 @@ git branch -d <nombre_rama>
 # Combinar cambios de otra rama a la rama actual
 git merge <nombre_rama>
 ```
+
+# Trabajo con Repositorios Remotos
+```bash
+# Ver repositorios remotos
+git remote -v
+
+# Agregar un repositorio remoto
+git remote add origin <url_del_repositorio>
+
+# Enviar cambios a un repositorio remoto
+git push origin <nombre_rama>
+
+# Descargar cambios desde el repositorio remoto
+git pull origin <nombre_rama>
+```
