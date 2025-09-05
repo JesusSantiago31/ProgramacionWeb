@@ -109,3 +109,16 @@ git reset --soft <commit_id>
 # Deshacer un commit y eliminar cambios
 git reset --hard <commit_id>
 ```
+
+# Etiquetas (Tags)
+```bash
+# Crear una etiqueta ligera
+git tag <nombre_tag>
+
+# Crear una etiqueta anotada
+git tag -a <nombre_tag> -m "Mensaje de la etiqueta"
+
+# Enviar etiquetas al repositorio remoto
+git push origin <nombre_tag>
+```
+
