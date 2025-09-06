@@ -122,3 +122,17 @@ git tag -a <nombre_tag> -m "Mensaje de la etiqueta"
 git push origin <nombre_tag>
 ```
 
+# Comandos Útiles Extra
+```bash
+# Mostrar configuración actual de Git
+git config --list
+
+# Borrar archivos del staging
+git reset <archivo>
+
+# Mostrar ramas remotas
+git branch -r
+
+# Cambiar último commit sin modificar mensaje
+git commit --amend
+```
